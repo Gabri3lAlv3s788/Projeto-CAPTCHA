@@ -45,4 +45,4 @@ def tratar_img(pasta_origem, pasta_destino="ajeitado"):
 
 
 if __name__ == "__main__":
-    tratar_img("1")
+    tratar_img("bdcaptcha")
