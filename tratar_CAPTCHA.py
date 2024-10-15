@@ -5,7 +5,7 @@ from PIL import Image
 
 
 # Vai ver a pasta de origem e a pasta de destino
-def tratar_img(pasta_origem, pasta_destino="3"):
+def tratar_img(pasta_origem, pasta_destino="ajeitado"):
     
     arquivos = glob.glob(f"{pasta_origem}/*")
     
