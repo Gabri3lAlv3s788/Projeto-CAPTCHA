@@ -8,7 +8,7 @@ metodo = [
     cv.THRESH_TRUNC, 
     cv.THRESH_TOZERO,
     cv.THRESH_TOZERO_INV,
-    
+ 
 ]
 
 img = cv.imread("1/telanova0.png")
@@ -26,12 +26,14 @@ for metodos in metodo:
 
 img = Image.open("2/imagem_tratada_3.png")
 img = img.convert("P")
-img2 = Image.new("P", img.size, 255)
+img2 = Image.new ("P", img.size, color = (255, 255, 255))
+black = (0, 0, 0)
 
 for x in range(img.size[1]): # 1 = colunas da imagem
     for y in range(img.size[0]): # 0 = linhas da imagem
         cor = img.getpixel((y, x))
-        if cor < 115:
-            img2.putpixel((y, x), 0)
+        if cor < 115: 
+            img2.putpixel((y, x), black)
+            print("AQUI")
         
 img2.save('2/img_final.png')
