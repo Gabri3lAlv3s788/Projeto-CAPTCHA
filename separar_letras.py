@@ -7,11 +7,11 @@ for arquivo in arquivos:
     imagem = cv.imread(arquivo)
     imagem = cv.cvtColor(imagem, cv.COLOR_RGB2GRAY)
 
-    _, imagem = cv.threshold(imagem, 0, 255, cv.THRESH_BINARY_INV)
+    _, nova_imagem = cv.threshold(imagem, 0, 255, cv.THRESH_BINARY_INV)
 
     # Encontrar os contornos de cada letra
     contornos, _ = cv.findContours(
-        imagem, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
+        nova_imagem, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
 
     regiao_letra = []
     # Filtrar os contornos que são de letras
