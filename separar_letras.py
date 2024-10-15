@@ -30,7 +30,7 @@ for arquivo in arquivos:
         x, y, largura, altura = retangulo
         imagem_letra = imagem[y-2:y+altura+2, x-2:x+largura+2]
         i += 1
-        nome_arquivo = os.path.basename(arquivo).replace(f".png", "letra{i}.png")
+        nome_arquivo = os.path.basename(arquivo).replace(f".png", f"letra{i}.png")
         cv.imwrite(f"letras/{nome_arquivo}", imagem_letra)
         cv.rectangle(imagem_final, (x-2, y-2), (x+largura+2, y+altura+2), (0,255,0))
     nome_arquivo = os.path.basename(arquivo)
