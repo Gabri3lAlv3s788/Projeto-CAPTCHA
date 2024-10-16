@@ -65,7 +65,7 @@ def quebrar_capctcha():
         texto_previsao = "".join(previsao)
         
         print(texto_previsao)
-        #return texto_previsao
+        return texto_previsao
 
 
 if __name__ == "__main__":

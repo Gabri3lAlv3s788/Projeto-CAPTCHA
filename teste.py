@@ -11,7 +11,7 @@ metodo = [
 
 ]
 
-img = cv2.imread("1/telanova0.png")
+img = cv2.imread("resolver/imagem1.png")
 
 img_cinza = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
