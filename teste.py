@@ -1,27 +1,27 @@
-import cv2 as cv
+from cv2 import cv2
 from PIL import Image
 
 metodo = [
 
-    cv.THRESH_BINARY,
-    cv.THRESH_BINARY_INV,
-    cv.THRESH_TRUNC,
-    cv.THRESH_TOZERO,
-    cv.THRESH_TOZERO_INV,
+    cv2.THRESH_BINARY,
+    cv2.THRESH_BINARY_INV,
+    cv2.THRESH_TRUNC,
+    cv2.THRESH_TOZERO,
+    cv2.THRESH_TOZERO_INV,
 
 ]
 
-img = cv.imread("1/telanova0.png")
+img = cv2.imread("1/telanova0.png")
 
-img_cinza = cv.cvtColor(img, cv.COLOR_RGB2GRAY)
+img_cinza = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
 i = 0
 
 for metodos in metodo:
 
     i += 1
-    _, tratada = cv.threshold(img_cinza, 127, 255, metodos or cv.THRESH_OTSU)
-    cv.imwrite(f"2/imagem_tratada_{i}.png", tratada)
+    _, tratada = cv2.threshold(img_cinza, 127, 255, metodos or cv2.THRESH_OTSU)
+    cv2.imwrite(f"2/imagem_tratada_{i}.png", tratada)
 
 
 img = Image.open("2/imagem_tratada_3.png")

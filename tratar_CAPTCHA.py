@@ -1,4 +1,4 @@
-import cv2 as cv
+from cv2 import cv2
 import os
 import glob
 from PIL import Image
@@ -11,15 +11,15 @@ def tratar_img(pasta_origem, pasta_destino="ajeitado"):
     
     for arquivo in arquivos:
         
-        img = cv.imread(arquivo)
+        img = cv2.imread(arquivo)
 
-        img_cinza = cv.cvtColor(img, cv.COLOR_RGB2GRAY)
+        img_cinza = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
-        _, tratada = cv.threshold(img_cinza, 127, 255, cv.THRESH_TRUNC or cv.THRESH_OTSU)
+        _, tratada = cv2.threshold(img_cinza, 127, 255, cv2.THRESH_TRUNC or cv2.THRESH_OTSU)
         
         nome = os.path.basename(arquivo)
         
-        cv.imwrite(f"{pasta_destino}/{nome}", tratada)
+        cv2.imwrite(f"{pasta_destino}/{nome}", tratada)
         
         img = Image.open("2/imagem_tratada_3.png")
         
